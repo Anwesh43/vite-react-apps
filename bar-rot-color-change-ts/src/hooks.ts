@@ -69,6 +69,7 @@ export const useStyle = (i : number, w : number, h : number, scale : number) =>{
                 left, 
                 width, 
                 height, 
+                transform: `rotate(${180 * scale}deg)`
             }
         } 
     }

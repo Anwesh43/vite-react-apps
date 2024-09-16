@@ -12,10 +12,10 @@ interface BRCCProps {
 const BarRotColorChange : React.FC<BRCCProps> = (props : BRCCProps) => {
     const {barStyle} = useStyle(props.i, props.w, props.h, props.scale)
     return (
-        <div onClick = {onClick} style = {barStyle()}>
+        <div onClick = {props.onClick} style = {barStyle()}>
 
         </div>
     )
 }
 
-export default BarRotColorChange
+export default withContext(BarRotColorChange)
