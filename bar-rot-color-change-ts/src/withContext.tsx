@@ -17,3 +17,5 @@ const withContext = (MainComponent : React.FC<any>) => {
         return <MainComponent {...newProps}></MainComponent>
     }
 } 
+
+export default withContext
