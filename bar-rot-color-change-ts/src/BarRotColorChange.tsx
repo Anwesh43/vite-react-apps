@@ -18,4 +18,4 @@ const BarRotColorChange : React.FC<BRCCProps> = (props : BRCCProps) => {
     )
 }
 
-export default BRCCProps
+export default BarRotColorChange
