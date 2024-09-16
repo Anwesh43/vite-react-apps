@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'
+import {useState, useEffect, CSSProperties} from 'react'
 
 const colors : Array<string> = [
     "#1A237E",
@@ -9,7 +9,7 @@ const colors : Array<string> = [
 ]
 export const useAnimatedScale = (scGap : number = 0.01, delay : number = 20) => {
     const [scale, setScale] = useState<number>(0)
-    const [animated, setAnimated] = useState<Boolean>(false)
+    const [animated, setAnimated] = useState<boolean>(false)
     const [i, setI] = useState<number>(0)
     return {
         i, 
@@ -49,5 +49,27 @@ export const useDimension = () => {
     return {
         w, 
         h, 
+    }
+}
+
+export const useStyle = (i : number, w : number, h : number, scale : number) =>{
+    const background = colors[i]
+    const position = 'absolute'
+    const size = Math.min(w, h) / 12 
+    return {
+        barStyle() : CSSProperties {
+            const width = `${size}px`
+            const top = `${w / 2 - size / 2}px`
+            const height = `${size}px`
+            const left = `${h / 2 - size / 2}px`
+            return {
+                position, 
+                background,
+                top,
+                left, 
+                width, 
+                height, 
+            }
+        } 
     }
 }
