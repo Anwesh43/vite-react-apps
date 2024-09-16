@@ -22,7 +22,7 @@ export const useAnimatedScale = (scGap : number = 0.01, delay : number = 20) => 
                         if (prev > 1) {
                             setAnimated(false)
                             clearInterval(interval)
-                            setI(i % colors.length)
+                            setI((i : number) => (i + 1) % colors.length)
                             return 0
                         }
                         return prev + scGap 
@@ -59,9 +59,9 @@ export const useStyle = (i : number, w : number, h : number, scale : number) =>{
     return {
         barStyle() : CSSProperties {
             const width = `${size}px`
-            const top = `${w / 2 - size / 2}px`
+            const top = `${h / 2 - size / 2}px`
             const height = `${size}px`
-            const left = `${h / 2 - size / 2}px`
+            const left = `${w / 2 - size / 2}px`
             return {
                 position, 
                 background,
